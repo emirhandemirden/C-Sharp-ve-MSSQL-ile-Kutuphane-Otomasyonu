@@ -1,0 +1,612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5D0538F9-B1EC-4CD1-8B69-EEDEBCAAD615}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>KütüphaneOtomasyonu</RootNamespace>
+    <AssemblyName>KütüphaneOtomasyonu</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v19.1.Core, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v19.1, Version=19.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EmanetGecmisleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmanetGecmisleri.Designer.cs">
+      <DependentUpon>EmanetGecmisleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmanetGecmisleriDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmanetGecmisleriDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Emanetler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emanetler.Designer.cs">
+      <DependentUpon>Emanetler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmanetlerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmanetlerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EmanetlerListesiRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmanetlerListesiRaporu.Designer.cs">
+      <DependentUpon>EmanetlerListesiRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmanetListesiRaporuUyeyeGore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmanetListesiRaporuUyeyeGore.Designer.cs">
+      <DependentUpon>EmanetListesiRaporuUyeyeGore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmanetVer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmanetVer.Designer.cs">
+      <DependentUpon>EmanetVer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Anaekran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Anaekran.Designer.cs">
+      <DependentUpon>Form_Anaekran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitaplarListesiRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitaplarListesiRaporu.Designer.cs">
+      <DependentUpon>KitaplarListesiRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitaplarListesiRaporuYazaraGore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitaplarListesiRaporuYazaraGore.Designer.cs">
+      <DependentUpon>KitaplarListesiRaporuYazaraGore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonellerListesiRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonellerListesiRaporu.Designer.cs">
+      <DependentUpon>PersonellerListesiRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonellerListesiRaporuAdaGore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonellerListesiRaporuAdaGore.Designer.cs">
+      <DependentUpon>PersonellerListesiRaporuAdaGore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Raporlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Raporlar.Designer.cs">
+      <DependentUpon>Raporlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitapEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitapEkle.Designer.cs">
+      <DependentUpon>KitapEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitapGecmisleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitapGecmisleri.Designer.cs">
+      <DependentUpon>KitapGecmisleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitapGecmisleriDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KitapGecmisleriDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="KitapGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitapGuncelle.Designer.cs">
+      <DependentUpon>KitapGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kitaplar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kitaplar.Designer.cs">
+      <DependentUpon>Kitaplar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KitaplarDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KitaplarDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="KitapSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KitapSil.Designer.cs">
+      <DependentUpon>KitapSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelEkle.Designer.cs">
+      <DependentUpon>PersonelEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGecmisleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGecmisleri.Designer.cs">
+      <DependentUpon>PersonelGecmisleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGecmisleriDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonelGecmisleriDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelGuncelle.Designer.cs">
+      <DependentUpon>PersonelGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personeller.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Personeller.Designer.cs">
+      <DependentUpon>Personeller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PersonellerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PersonellerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="PersonelSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PersonelSil.Designer.cs">
+      <DependentUpon>PersonelSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="UyeEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeEkle.Designer.cs">
+      <DependentUpon>UyeEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UyeGecmisleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeGecmisleri.Designer.cs">
+      <DependentUpon>UyeGecmisleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UyeGecmisleriDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UyeGecmisleriDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UyeGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeGuncelle.Designer.cs">
+      <DependentUpon>UyeGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uyeler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Uyeler.Designer.cs">
+      <DependentUpon>Uyeler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UyelerDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UyelerDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UyelerListesiRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyelerListesiRaporu.Designer.cs">
+      <DependentUpon>UyelerListesiRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UyelerListesiRaporuTcyeGore.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyelerListesiRaporuTcyeGore.Designer.cs">
+      <DependentUpon>UyelerListesiRaporuTcyeGore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UyeSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeSil.Designer.cs">
+      <DependentUpon>UyeSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YazarEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YazarEkle.Designer.cs">
+      <DependentUpon>YazarEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YazarGecmisleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YazarGecmisleri.Designer.cs">
+      <DependentUpon>YazarGecmisleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YazarGecmisleriDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YazarGecmisleriDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="YazarGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YazarGuncelle.Designer.cs">
+      <DependentUpon>YazarGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Yazarlar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Yazarlar.Designer.cs">
+      <DependentUpon>Yazarlar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YazarlarDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YazarlarDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="YazarlarListesiRaporu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YazarlarListesiRaporu.Designer.cs">
+      <DependentUpon>YazarlarListesiRaporu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YazarlarListesiRaporuAdaGöre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YazarlarListesiRaporuAdaGöre.Designer.cs">
+      <DependentUpon>YazarlarListesiRaporuAdaGöre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YazarSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YazarSil.Designer.cs">
+      <DependentUpon>YazarSil.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EmanetGecmisleri.resx">
+      <DependentUpon>EmanetGecmisleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emanetler.resx">
+      <DependentUpon>Emanetler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmanetlerListesiRaporu.resx">
+      <DependentUpon>EmanetlerListesiRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmanetListesiRaporuUyeyeGore.resx">
+      <DependentUpon>EmanetListesiRaporuUyeyeGore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmanetVer.resx">
+      <DependentUpon>EmanetVer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Anaekran.resx">
+      <DependentUpon>Form_Anaekran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitaplarListesiRaporu.resx">
+      <DependentUpon>KitaplarListesiRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitaplarListesiRaporuYazaraGore.resx">
+      <DependentUpon>KitaplarListesiRaporuYazaraGore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonellerListesiRaporu.resx">
+      <DependentUpon>PersonellerListesiRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonellerListesiRaporuAdaGore.resx">
+      <DependentUpon>PersonellerListesiRaporuAdaGore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Raporlar.resx">
+      <DependentUpon>Raporlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitapEkle.resx">
+      <DependentUpon>KitapEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitapGecmisleri.resx">
+      <DependentUpon>KitapGecmisleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitapGuncelle.resx">
+      <DependentUpon>KitapGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kitaplar.resx">
+      <DependentUpon>Kitaplar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KitapSil.resx">
+      <DependentUpon>KitapSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelEkle.resx">
+      <DependentUpon>PersonelEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGecmisleri.resx">
+      <DependentUpon>PersonelGecmisleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelGuncelle.resx">
+      <DependentUpon>PersonelGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Personeller.resx">
+      <DependentUpon>Personeller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PersonelSil.resx">
+      <DependentUpon>PersonelSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report10.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
+    <EmbeddedResource Include="Report3.rdlc" />
+    <EmbeddedResource Include="Report4.rdlc" />
+    <EmbeddedResource Include="Report5.rdlc" />
+    <EmbeddedResource Include="Report6.rdlc" />
+    <EmbeddedResource Include="Report7.rdlc" />
+    <EmbeddedResource Include="Report8.rdlc" />
+    <EmbeddedResource Include="Report9.rdlc" />
+    <EmbeddedResource Include="UyeEkle.resx">
+      <DependentUpon>UyeEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyeGecmisleri.resx">
+      <DependentUpon>UyeGecmisleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyeGuncelle.resx">
+      <DependentUpon>UyeGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uyeler.resx">
+      <DependentUpon>Uyeler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyelerListesiRaporu.resx">
+      <DependentUpon>UyelerListesiRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyelerListesiRaporuTcyeGore.resx">
+      <DependentUpon>UyelerListesiRaporuTcyeGore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyeSil.resx">
+      <DependentUpon>UyeSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YazarEkle.resx">
+      <DependentUpon>YazarEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YazarGecmisleri.resx">
+      <DependentUpon>YazarGecmisleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YazarGuncelle.resx">
+      <DependentUpon>YazarGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yazarlar.resx">
+      <DependentUpon>Yazarlar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YazarlarListesiRaporu.resx">
+      <DependentUpon>YazarlarListesiRaporu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YazarlarListesiRaporuAdaGöre.resx">
+      <DependentUpon>YazarlarListesiRaporuAdaGöre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YazarSil.resx">
+      <DependentUpon>YazarSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="EmanetGecmisleriDataSet.xsc">
+      <DependentUpon>EmanetGecmisleriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmanetGecmisleriDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmanetGecmisleriDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EmanetGecmisleriDataSet.xss">
+      <DependentUpon>EmanetGecmisleriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmanetlerDataSet.xsc">
+      <DependentUpon>EmanetlerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EmanetlerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EmanetlerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EmanetlerDataSet.xss">
+      <DependentUpon>EmanetlerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KitapGecmisleriDataSet.xsc">
+      <DependentUpon>KitapGecmisleriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KitapGecmisleriDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KitapGecmisleriDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="KitapGecmisleriDataSet.xss">
+      <DependentUpon>KitapGecmisleriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KitaplarDataSet.xsc">
+      <DependentUpon>KitaplarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="KitaplarDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KitaplarDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="KitaplarDataSet.xss">
+      <DependentUpon>KitaplarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="PersonelGecmisleriDataSet.xsc">
+      <DependentUpon>PersonelGecmisleriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PersonelGecmisleriDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PersonelGecmisleriDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PersonelGecmisleriDataSet.xss">
+      <DependentUpon>PersonelGecmisleriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PersonellerDataSet.xsc">
+      <DependentUpon>PersonellerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="PersonellerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PersonellerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="PersonellerDataSet.xss">
+      <DependentUpon>PersonellerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="UyeGecmisleriDataSet.xsc">
+      <DependentUpon>UyeGecmisleriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UyeGecmisleriDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UyeGecmisleriDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UyeGecmisleriDataSet.xss">
+      <DependentUpon>UyeGecmisleriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UyelerDataSet.xsc">
+      <DependentUpon>UyelerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UyelerDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UyelerDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UyelerDataSet.xss">
+      <DependentUpon>UyelerDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="YazarGecmisleriDataSet.xsc">
+      <DependentUpon>YazarGecmisleriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="YazarGecmisleriDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>YazarGecmisleriDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="YazarGecmisleriDataSet.xss">
+      <DependentUpon>YazarGecmisleriDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="YazarlarDataSet.xsc">
+      <DependentUpon>YazarlarDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="YazarlarDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>YazarlarDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="YazarlarDataSet.xss">
+      <DependentUpon>YazarlarDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
